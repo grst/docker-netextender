@@ -2,7 +2,7 @@
 
 spawn "netExtender" -u $env(VPN_USER) -d $env(VPN_DOMAIN) -s $env(VPN_SERVER)
 
-set timeout 5
+set timeout 20 
 
 expect "User Access Authentication"
 expect "Password:"

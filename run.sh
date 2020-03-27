@@ -8,7 +8,7 @@ for v in 'VPN_USER' 'VPN_PASS' 'VPN_DOMAIN' 'VPN_SERVER' 'VPN_RDPIP'; do
 done
 
 iptables -F
-iptables -t nat -A PREROUTING -p tcp --dport 3380 -j DNAT --to-destination  ${VPN_RDPIP}:3389
+iptables -t nat -A PREROUTING -p tcp --dport 22 -j DNAT --to-destination  ${VPN_RDPIP}:22
 iptables -t nat -A POSTROUTING -j MASQUERADE
 
 # Setup masquerade, to allow using the container as a gateway
